@@ -1,0 +1,182 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<center>
+	<h1>¡Bienvenido a <i>lógos</i>!</h1>
+	<figure>
+	<img src="static/imgs/logos.svg">
+	</figure>
+	<p>
+	<i>Verificador de lógica proposicional</i>
+	</p>
+	</center>
+	<h2>Instrucciones</h2>
+	<center>
+	<img src="static/imgs/exverifyarg.png" style="border: 1px solid; width: 25vw; min-width: 100px;">
+	<figcaption>
+		Figura 1. Derivación de un argumento asistida por <i>lógos</i>.
+	</figcaption>
+	</center>
+	<h3>Instrucciones de uso por pasos</h3>
+	<ol>
+	<li>
+		Ir a la página
+		<a href="http://localhost:5000/argmeta">Derivar argumento</a>.
+	</li>
+	<li>
+		<p>
+		En el formulario <i>Metadatos del argumento</i>:
+		</p>
+		<ul>
+		<li>
+		En el campo de texto <i>Variables proposicionales</i> debe
+		ingresar todas las variables proposicionales implicadas en la
+		derivación del argumento separadas por coma. Por ejemplo, si
+		<i>todas</i> las variables involucradas en la derivación del
+		argumento serán <var>P, Q</var> y <var>R</var>; entonces la
+		entrada del campo debe ser llenada con «<code>p,q,r</code>» (sin
+		las comillas angulares).
+		</li>
+		<li>
+		En el campo <i>Número total de premisas</i> debe ingresar el
+		número total de premisas del argumento que debe ser un número
+		entero.
+		</li>
+		</ul>
+		<p>
+		Después de llenar cada campo haga click en el botón
+		<i>Continuar</i>.
+		</p>
+	</li>
+	<li>
+		En el formulario <i>Premisas del argumento</i>:
+		<ul>
+		<li>
+		<p><i>Todas las proposiciones se ingresan en mayúsculas.</i></p>
+		</li>
+		<li>
+		<p>
+		En los campos de premisas debe ingresar cada premisa en notación
+		funcional. Las funciones de verdad
+		<code>NOT</code> (negación, <i>no</i>),
+		<code>AND</code> (conjunción, <i>y</i>),
+		<code>OR</code> (disyunción, <i>o</i>),
+		<code>IF</code> (condicional, <i>si</i>), y
+		<code>FF</code> (bicondicional, <i>si y solo si</i>)
+		están definidas como normalmente se hace en lógica proposicional
+		y los argumentos son variables proposicionales que se pueden
+		denotar por cualquier letra del alfabeto (por ejemplo,
+		<code>P</code> o <code>Q</code>). También pueden ser argumentos
+		otras funciones de verdad puesto que se permite la composición
+		de funciones (por ejemplo, <code>NOT(IF(P,Q))</code> o
+		<code>AND(P,NOT(Q))</code>). Haciendo una equivalencia con la
+		notación matemática convencional vemos que
+		</p>
+		<p>
+		<ul>
+			<code>NOT(P)</code> equivale a
+			<img src="static/imgs/not.png">,
+		</ul>
+		<ul>
+			<code>AND(P,Q)</code> equivale a
+			<img src="static/imgs/and.png">,
+		</ul>
+		<ul>
+			<code>OR(P,Q)</code> equivale a
+			<img src="static/imgs/or.png">,
+		</ul>
+		<ul>
+			<code>IF(P,Q)</code> equivale a
+			<img src="static/imgs/if.png">,
+		</ul>
+		<ul>
+			<code>FF(P,Q)</code> equivale a
+			<img src="static/imgs/iff.png">,
+		</ul>
+		<ul>
+			<code>NR(P,Q)</code> equivale a
+			<img src="static/imgs/nor.png">
+		</ul>
+		<ul>
+			y
+			<code>XR(P,Q)</code> equivale a
+			<img src="static/imgs/xor.png">.
+		</ul>
+		</p>
+		<p>
+		Por ejemplo, si la primera premisa (<i>P1</i>) es
+		<img src="static/imgs/exprop00.png">, entonces debe ingresar en el campo
+		de texto <i>P1</i> el código <code>IF(OR(P,Q),R)</code> que es su
+		equivalente.
+		</p>
+		</li>
+		</ul>
+		<p>
+		Después de haber rellenado todos los campos de premisas, dar
+		click en el botón <i>Continuar</i>.
+		</p>
+	</li>
+	<li>
+		<p>
+		En el formulario <i>Verificar inferencias</i>:
+		<ul>
+		<li>
+		<p><i>Todas las proposiciones se ingresan en mayúsculas (afecta al
+		primer campo).</i></p>
+		</li>
+		<li>
+		<p>
+		En el campo de texto con la etiqueta <i>P<var>n</var></i>
+		debe ingresar la proposición que quiere deducir (<var>n</var>
+		es el número de la última proposición
+		del argumento más uno). Por ejemplo, si solo tiene las premisas
+		<var>P1</var> = <img src="static/imgs/exprop01.png"> y
+		<var>P2</var> = <img src="static/imgs/exprop02.png">
+		y quiere deducir la proposición <img src="static/imgs/exprop03.png">
+		mediante la regla de inferencia <i>modus ponens</i>,
+		entonces debe llenar el campo <i>P3</i> con «<code>Q</code>».
+		</p>
+		</li>
+		<li>
+		<p>
+		En el campo REFS debe poner separados por coma los números
+		correspondientes a las premisas o proposiciones de las cuales se
+		sigue la inferencia. Por ejemplo, si la inferencia se
+		sigue de <var>P1</var> y <var>P2</var>, entonces debe ingresar
+		«<code>1,2</code>» en este campo.
+		</p>
+		</li>
+		<li>
+		<p>
+		El campo INFE puede dejarse en blanco o rellenar con el nombre
+		de la regla de inferencia que se usó o llenarse con algún texto
+		descriptivo sobre la inferencia. Por ejemplo,
+		«<code>Modus ponens</code>».
+		</p>
+		</li>
+		</p>
+		</li>
+		</ul>
+		<p>
+		Después de dar los datos suficientes, debe dar click en el botón
+		<i>Verificar</i> y el programa confirmará la validez de la
+		inferencia.
+		</p>
+	</li>
+	<li>
+		<p>
+		En continuidad puede seguir comprobando otras inferencias, las inferencias
+		correctas se agregan a la cadena de proposiciones y se
+		pueden referenciar más tarde. Las proposiciones falsas son
+		producto de las inferencias incorrectas, las cuales son
+		señaladas como tal y son eliminadas de la cadena.
+		</p>
+	</li>
+	<li>
+		<p>
+		Para cargar un nuevo argumento debe ir otra vez a la página
+		<a href="http://localhost:5000/argmeta">Derivar argumento</a>.
+		</p>
+	</li>
+	</ol>
+{% endblock %}

@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% set inewprems = namespace(val=0) %}
+{% set messages = get_flashed_messages() %}
+	<center>
+    <h1>Derivar argumento</h1>
+    <h2>Verificar inferencias</h2>
+	</center>
+	<br>
+	<br>
+	<div class="row">
+		<div class="column">
+{% if prems %}
+	{% for prem in prems %}
+	<i>(P{{ loop.index }})</i>
+	&nbsp;&nbsp;&nbsp;&nbsp;
+	<!--	{{ prem|upper }} -->
+	<img src="/static/temprops/p{{loop.index}}.png">
+	<br>
+
+	{% if loop.index == ognprems %}
+		<hr>
+	{% endif %}
+
+	{% if loop.last %}
+		{% if messages %}
+		{% if messages[0] == "true" %}
+			&nbsp;&nbsp;&nbsp;
+			&nbsp;&nbsp;&nbsp;
+			&nbsp;&nbsp;&nbsp;
+			<b>[<font color=darkgreen>✓</font>] - correcto</b>
+		{% else %}
+			&nbsp;&nbsp;&nbsp;
+			&nbsp;&nbsp;&nbsp;
+			&nbsp;&nbsp;&nbsp;
+			<!-- {{ messages[1]|upper }} -->
+			<img src="/static/temprops/mal.png">
+			<br>
+			&nbsp;&nbsp;&nbsp;
+			&nbsp;&nbsp;&nbsp;
+			&nbsp;&nbsp;&nbsp;
+			<b>[<font color=darkred>x</font>] - incorrecto</b>
+		{% endif %}
+		{% endif %}
+	{% endif %}
+	{% endfor %}
+{% endif %}
+    <form action="" method="post" novalidate>
+	{{ form.hidden_tag() }}
+	<p>
+	<i>(P{{prems|length + 1}}):</i>
+	&nbsp;&nbsp;&nbsp;
+	{{ form.prop(size=32) }}<br>
+	REFS:&nbsp;&nbsp;
+	{{ form.refs(size=32) }}<br>
+	INFE:&nbsp;&nbsp;
+	{{ form.reginf(size=32) }}
+	</p>
+	<p>{{ form.submit() }}</p> 
+    </form>
+</div>
+<div class="column">
+{% set inewprems.val = 0 %}
+{% if prems %}
+	{% for prem in prems %}
+	{% if loop.index > ognprems %}
+	<i>P({{ refs[inewprems.val] }})</i>: {{ rinfs[inewprems.val] }}
+	{% set inewprems.val = inewprems.val+1 %}
+	{% endif %}
+	<br>
+	{% if loop.index == ognprems %}
+		<hr>
+	{% endif %}
+	{% endfor %}
+	{% if messages[0] == "false" %}
+	<i>P({{ messages[2] }})</i>: {{ messages[3] }}
+	{% endif %}
+{% endif %}
+</div>
+</div>
+{% endblock %}

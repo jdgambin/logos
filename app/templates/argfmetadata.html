@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<center>
+    <h1>Derivar argumento</h1>
+    <h2>Metadatos del argumento</h2>
+	</center>
+	<br>
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <p>
+	{{ form.vars.label }} {{ form.vars(size=32) }}
+        </p>
+        <p>
+	{{ form.nprems.label }} {{ form.nprems(size=32) }}
+        </p>
+	<br>
+	<p>{{ form.submit() }}</p>
+    </form>
+{% endblock %}
