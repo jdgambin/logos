@@ -146,7 +146,7 @@ def XR(p, q):
 
 def isvalidarg(prems, concprop, allvars):
     """Verificar implicación entre las premisas-literal (prems) y la
-        conclusión-literal (conprop), las cuales contienen
+        conclusión-literal (concprop), las cuales contienen
         varias variables-literal (allvars)."""
     nvars = len(allvars)
     concprop = concprop.upper()
