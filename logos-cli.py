@@ -183,7 +183,6 @@ for i in range(nv):
 
 pn=1
 
-
 fi = input("Ingrese una fórmula booleana (premisa " + str(pn) + "): ")
 
 prems = [ ]
