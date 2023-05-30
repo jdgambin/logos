@@ -1,4 +1,5 @@
 #!/bin/bash
+# Script para probar la aplicación web.
 
 if ! type -P flask &> /dev/null
 then
