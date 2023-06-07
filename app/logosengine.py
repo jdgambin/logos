@@ -145,12 +145,12 @@ def XR(p, q):
 # Función que verifica la implicación entre premisas y conclusión de un
 # argumento.
 
-def isvalidarg(prems, concprop, allvars):
+def isvalidarg(prems, conc, allvars):
     """Verificar implicación entre las premisas-literal (prems) y la
-        conclusión-literal (concprop), las cuales contienen
+        conclusión-literal (conc), las cuales contienen
         varias variables-literal (allvars)."""
     nvars = len(allvars)
-    concprop = concprop.upper()
+    conc = conc.upper()
     conjprems = andvars(prems).upper()
     varlist = commavars(allvars)
     posstruthvalues = list(set(list(itertools.permutations([True, False]*nvars,
@@ -160,7 +160,7 @@ def isvalidarg(prems, concprop, allvars):
 
     for tv in posstruthvalues:
         exec(varlist.upper() + " = " + str(tv))
-        if not eval("IF(" + conjprems + ", " + concprop + ")"):
+        if not eval("IF(" + conjprems + ", " + conc + ")"):
             implication = False
             break
 
