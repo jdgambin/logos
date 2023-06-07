@@ -7,14 +7,9 @@ import itertools
 #
 
 # Funciones para asistir en la creación y evaluación de tablas de verdad del
-# motor inferencial.
+# motor inferencial (commainsert, commavars, andinsert y andvars).
 
-def andinsert(a, b):
-    """Retorna una cadena en la que se insertan dos proposiciones-literal como
-        argumentos de una función AND-literal."""
-    return "AND(" + a + "," + b + ")"
-
-def commainsert(a,b):
+def commainsert(a, b):
     """Retorna una cadena en la que se insertan dos variables-literal separadas
         por coma."""
     return a + ", " + b
@@ -29,6 +24,11 @@ def commavars(varlist):
         return commainsert(varlist[0], varlist[1])
     joinedvars = [ commainsert(varlist[0], varlist[1]) ]
     return commavars(joinedvars + varlist[2:])
+
+def andinsert(a, b):
+    """Retorna una cadena en la que se insertan dos proposiciones-literal como
+        argumentos de una función AND-literal."""
+    return "AND(" + a + "," + b + ")"
 
 def andvars(props):
     """Retorna una cadena con funciones AND-literal anidadas para la conjunción
@@ -50,7 +50,8 @@ def andvars(props):
 # Inicio de la codificación del motor inferencial (lógos).
 #
 
-# Funciones que formalizan las conectivas lógicas.
+# Funciones que formalizan las conectivas lógicas (NOT, AND, OR, IF, FF, NR y
+# XR).
 
 def NOT(p):
     """
