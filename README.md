@@ -1,7 +1,6 @@
 # lógos
 
-Una aplicación para verificar inferencias y argumentos validos de la lógica
-proposicional.
+Un verificador de inferencias y argumentos validos de lógica proposicional.
 
 ### Contenido
 
