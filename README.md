@@ -1,4 +1,4 @@
-# lógos
+# logos
 
 Un verificador de inferencias y argumentos validos de lógica proposicional.
 
