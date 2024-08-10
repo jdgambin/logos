@@ -1,0 +1,185 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<center>
+	<h1>Ejemplo de uso</h1>
+	</center>
+
+	<p>Suponga que desea comprobar, paso a paso, la corrección de la
+	siguiente derivación lógica:</p>
+
+	<center>
+	<img src="static/imgs/ej/ej01m.png">
+	<figcaption>
+		Figura 1. Prueba lógica escrita en notación matemática.
+	</figcaption>
+	</center>
+
+	<ol>
+	<li>
+		Ir a la página
+		<a href="{{ url_for('argf1') }}">Derivar argumento</a>.
+	</li>
+	<li>
+		<p>
+		En primer lugar, debe dar unos datos sobre el argumento:
+		</p>
+		<center>
+		<img src="static/imgs/ej/ej01a.png" style="border: 1px solid;">
+		</center>
+		<p>
+		En la Figura 1 las variables usadas son <var>A, B, C</var> y
+		<var>D</var>, y las premisas del argumento son en total 3. Por
+		tanto, llenamos con estos valores el formulario en sus
+		respectivas cajas de texto.
+		</p>
+	</li>
+	<li>
+		<p>Luego ingresamos las premisas del argumento</i>:</p>
+		<center>
+		<img src="static/imgs/ej/ej01b.png" style="border: 1px solid;">
+		</center>
+		<ul>
+		<li>
+		<p>Recordar que <i>todos los códigos de proposiciones se
+		ingresan en mayúsculas.</i></p>
+		</li>
+		<li>
+		<p>
+		Debe ingresar cada premisa en la notación funcional de logos.
+		Las funciones en este ejemplo son:
+		</p>
+
+		<ul>
+			<code>NOT(P)</code> que equivale a
+			<img src="static/imgs/not.png">,
+		</ul>
+		<ul>
+			<code>OR(P,Q)</code> que equivale a
+			<img src="static/imgs/or.png">
+		</ul>
+		<ul>
+			y
+			<code>IF(P,Q)</code> que equivale a
+			<img src="static/imgs/if.png">.
+		</ul>
+
+		<p>
+		Traduciendo todas las premisas de notación matemática a la
+		notación funcional de logos nos queda:
+		</p>
+
+		<center>
+		<img src="static/imgs/ej/tradej01.png"><br>
+		</center>
+
+		<p>Dar clic en <i>continuar</i>.</p>
+		</li>
+		</ul>
+	</li>
+	<li>
+		<p>
+		Si todo está bien, continúa con la verificación de
+		inferencias:</p>
+		<center>
+		<img src="static/imgs/ej/ej01c.png" style="border: 1px solid;">
+		</center>
+		<p>Comprobemos la deducción <img
+		src="static/imgs/ej/eq03math.png"> y tratemos de inferirla de
+		(P3).</p>
+		<ul>
+		<li>
+		<p>
+		En el campo de texto con la etiqueta <i>(P<var>n</var>)</i>
+		debe ingresar la proposición que quiere deducir, en nuestro
+		caso, <code>AND(NOT(A),NOT(B))</code>.
+		</p>
+		</li>
+		<li>
+		<p>
+		En el campo REFS debe poner, separados por coma, los números
+		correspondientes a las premisas o proposiciones de las cuales se
+		sigue la inferencia. En este caso es una sola proposición, (P3),
+		así que ponemos 3.
+		</p>
+		</li>
+		<li>
+		<p>
+		El campo INFE puede dejarse en blanco o rellenarse con el nombre
+		de la regla de inferencia que se usó o llenarse con algún texto
+		descriptivo sobre la inferencia.
+		</p>
+		<center>
+		<img src="static/imgs/ej/ej01d.png" style="border: 1px solid;">
+		</center>
+		</li>
+		</p>
+		</li>
+		</ul>
+
+		<p>
+		Después de poner los datos, debe dar clic en el botón
+		<i>Verificar</i> y el programa confirmará la validez de la
+		inferencia:
+		</p>
+		<center>
+		<img src="static/imgs/ej/ej01e.png" style="border: 1px solid;">
+		</center>
+	</li>
+	<li>
+		<p>
+		Puede continuar comprobando otras inferencias, las inferencias
+		correctas se agregan a la cadena de proposiciones y se
+		pueden referenciar más tarde. Las proposiciones falsas son
+		obtenidas por inferencias incorrectas, estas son señaladas y no
+		son agregadas en la memoria de la cadena de derivación.
+		</p>
+
+		<p>
+		Si queremos comprobar la deducción
+		<img src="/static/imgs/ej/eq02matha.png">, como siempre, primero
+		debemos traducir de notación matemática a notación funcional de
+		logos como sigue:
+		</p>
+
+		<center>
+		<img src="/static/imgs/ej/eq02math.png">
+		</center>
+
+		<p>
+		Luego ingresamos los datos relevantes en el formulario:
+		</p>
+
+		<center>
+		<img src="static/imgs/ej/ej01f.png" style="border: 1px solid;">
+		</center>
+
+		<p>Y damos clic en <i>Verificar</i>:</p>
+
+		<center>
+		<img src="static/imgs/ej/ej01g.png" style="border: 1px solid;">
+		</center>
+
+		<p>Vemos que esta vez fue correcta la deducción y esta
+		proposición se guarda en la cadena de derivaciones. De la misma
+		manera podemos
+		continuar probando otras inferencias:</p>
+
+		<center>
+		<img src="static/imgs/ej/ej01h.png" style="border: 1px solid;">
+		</center>
+
+		<p>Podemos derivar argumentos largos y complejos:</p>
+
+		<center>
+		<img src="static/imgs/ej/ej02min.png" style="border: 1px solid;">
+		</center>
+	</li>
+	<li>
+		<p>
+		Para cargar un nuevo argumento debe ir otra vez a la página
+		<a href="{{ url_for('argf1') }}">Derivar argumento</a>.
+		</p>
+	</li>
+	</ol>
+{% endblock %}

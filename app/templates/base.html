@@ -6,15 +6,16 @@
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static',
 		   filename='style/style.css') }}">
         {% if title %}
-	<title>{{ title }} - lógos (λόγος)</title>
+	<title>{{ title }} - logos (λόγος)</title>
         {% else %}
-	<title>lógos (λόγος)</title>
+	<title>logos (λόγος)</title>
         {% endif %}
     </head>
     <body>
         <div>
-		<i>lógos</i> (λόγος) |
+		<i>logos</i> (λόγος) |
 		<a href="{{ url_for('index') }}">Inicio</a> :
+		<a href="{{ url_for('ejemplos') }}">Ejemplos</a> :
 		<a href="{{ url_for('argf1') }}">Derivar argumento</a>
         </div>
         <hr>

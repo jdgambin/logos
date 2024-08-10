@@ -22,6 +22,11 @@ def index():
     """Lógica a ejecutar cuando el cliente solicita la URL del índice."""
     return render_template('index.html', title='Inicio')
 
+@app.route('/ejemplos')
+def ejemplos():
+    """Lógica a ejecutar cuando el cliente solicita la URL de los ejemplos."""
+    return render_template('ejemplos.html', title='Ejemplos')
+
 @app.route('/argmeta', methods=['GET', 'POST'])
 def argf1():
     """Lógica a ejecutar para la URL de metadatos del argumento."""
