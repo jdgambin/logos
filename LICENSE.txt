@@ -1,4 +1,4 @@
-Copyright (c) 2023 Jesús Gambín
+Copyright (c) 2023-2026 Jesús Gambín
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification,
