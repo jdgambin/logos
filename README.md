@@ -1,6 +1,6 @@
 # Logos
 
-> An interactive propositional logic inference engine written in Python.
+> An interactive propositional logic inference and derivation assistant written in Python.
 
 Logos is a personal software project for exploring propositional logic through interactive argument construction and truth-table validation.
 
@@ -9,7 +9,7 @@ At its core, Logos evaluates whether an argument is logically valid by exhaustiv
 The project provides two complementary interfaces:
 
 * **Command-Line Interface (CLI):** validates complete propositional logic arguments.
-* **Flask Web Application:** acts as an interactive assistant for validating each step of a propositional logic derivation before incorporating it into the proof.
+* **Flask Web Application:** acts as an interactive assistant for validating each step of a propositional logic derivation before incorporating it into the derivation.
 
 To improve readability during the derivation process, the web application also renders logical formulas as LaTeX expressions.
 
