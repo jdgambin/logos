@@ -199,6 +199,12 @@ Its main goals were:
 
 ---
 
+## Motivation
+
+Logos was born from the experience of learning propositional logic and manually constructing formal derivations. The goal is to explore how software can support the understanding and verification of logical arguments.
+
+---
+
 ## Project Status
 
 Logos is an ongoing personal project. It is currently being modernized to incorporate current Python development practices, including improved documentation, automated testing, static analysis, and continuous integration while preserving the original inference engine and its behavior.
