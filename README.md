@@ -20,6 +20,7 @@ To improve readability during the derivation process, the web application also r
 * Validate propositional logic arguments using truth tables.
 * Build logical derivations interactively, one inference at a time.
 * Validate every inference step before adding it to the derivation.
+* Maintain a derivation chain where verified propositions can be referenced in later inference steps.
 * Support the following logical connectives:
 
   * Negation (NOT)
