@@ -2,14 +2,14 @@
 
 > An interactive propositional logic inference and derivation assistant built with Python.
 
-Logos is a personal software project for exploring propositional logic through interactive argument construction and truth-table validation.
+Logos is a personal software project for exploring propositional logic through argument construction, step-by-step derivation validation, and truth-table-based semantic evaluation.
 
-At its core, Logos evaluates whether an argument is logically valid by exhaustively checking every possible truth assignment of its propositional variables.
+At its core, Logos evaluates logical consequence by exhaustively checking every possible truth assignment of the propositional variables involved in an argument.
 
 The project provides two complementary interfaces:
 
 * **Command-Line Interface (CLI):** a lightweight interface for validating complete propositional logic arguments using only Python's standard library.
-* **Flask Web Application:** provides an interactive environment for constructing propositional logic derivations, validating each inference step, and extending the argument with verified propositions.
+* **Flask Web Application:** provides an interactive environment for constructing propositional logic derivations, validating each inference step, and extending the argument with propositions that are logically entailed by previous statements.
 
 To improve readability during the derivation process, the web application also renders logical formulas as LaTeX expressions.
 
@@ -21,8 +21,9 @@ To improve readability during the derivation process, the web application also r
 * Build logical derivations interactively, one inference at a time.
 * Validate every inference step before adding it to the derivation.
 * Maintain a derivation chain where verified propositions can be referenced in later inference steps.
+* Translate logical formulas into Logos functional notation.
+* Render logical formulas as LaTeX expressions.
 * Support the following logical connectives:
-
   * Negation (NOT)
   * Conjunction (AND)
   * Disjunction (OR)
@@ -30,7 +31,6 @@ To improve readability during the derivation process, the web application also r
   * Biconditional (IFF)
   * NOR
   * XOR
-* Render logical formulas as LaTeX expressions.
 * Command-line interface.
 * Flask-based web application.
 
@@ -46,7 +46,7 @@ An argument is considered **logically valid** if the implication
 
 is true under every possible valuation.
 
-In the web application, users can progressively construct a derivation by proposing new inference steps. Each proposed step is verified by the inference engine before being incorporated into the argument. Each proposition can reference previous premises or derived statements, creating a growing chain of verified logical steps.
+In the web application, users can progressively construct a derivation by proposing new inference steps. Each proposition may reference previous premises or derived statements, creating a chain of logically validated steps.
 
 ---
 
@@ -59,7 +59,8 @@ The Flask application provides a step-by-step environment for constructing propo
    - Define the initial number of premises.
 
 2. **Enter the premises**
-   - Provide the initial propositions using Logos functional notation.
+   - Translate logical formulas into Logos functional notation.
+   - Provide the initial propositions of the argument.
 
 3. **Construct the derivation**
    - Propose a new proposition.
@@ -94,7 +95,7 @@ This approach allows users to build arguments incrementally while keeping the va
 ├── requirements.txt         # Python dependencies
 ├── setup.sh                 # Virtual environment setup script
 ├── run.sh                   # Web server execution script
-├── clearcache.sh            # Utility script for cleaning generated files
+├── clearcache.sh            # Utility script for clearing generated files
 │
 ├── README.md
 └── LICENSE.txt
@@ -111,6 +112,7 @@ This approach allows users to build arguments incrementally while keeping the va
 * HTML
 * CSS
 * LaTeX
+* Bash scripting
 
 ---
 
@@ -139,7 +141,7 @@ This will:
 
 ### 3. Install system dependencies
 
-Logos uses SymPy to render logical formulas as LaTeX images. This requires an external LaTeX installation and image rendering tools.
+Logos uses SymPy to render logical formulas as LaTeX images. On Linux systems, this requires an external LaTeX installation and image rendering tools.
 
 #### Ubuntu / Debian
 
@@ -190,8 +192,8 @@ This project was created to better understand how propositional logic can be imp
 
 Its main goals were:
 
-* Design and implement an inference engine from scratch.
-* Separate the core inference engine from the user interfaces.
+* Design a reusable inference engine independent from the user interfaces.
+* Implement the inference engine from scratch.
 * Explore truth-table evaluation as a method for validating logical arguments.
 * Explore how logical derivations can be represented and validated programmatically.
 * Build both a command-line interface and a web application on top of the same engine.
@@ -201,7 +203,7 @@ Its main goals were:
 
 ## Motivation
 
-Logos was born from the experience of learning propositional logic and manually constructing formal derivations. The goal is to explore how software can support the understanding and verification of logical arguments.
+Logos was born from the experience of learning propositional logic and manually constructing formal derivations. The goal is to explore how software can support the construction, understanding, and verification of logical arguments.
 
 ---
 
