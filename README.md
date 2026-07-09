@@ -81,30 +81,71 @@ In the web application, users can progressively construct a derivation by propos
 
 ## Getting Started
 
-Clone the repository:
+### 1. Clone the repository
 
 ```bash
 git clone https://github.com/jdgambin/logos.git
 cd logos
 ```
 
-Install the required dependencies:
+### 2. Create the Python environment and install dependencies
+
+Run the setup script:
 
 ```bash
-pip install -r requirements.txt
+./setup.sh
 ```
 
-Run the web application:
+This will:
+
+* Create a Python virtual environment (`.venv`).
+* Upgrade `pip`.
+* Install the required Python packages from `requirements.txt`.
+
+### 3. Install system dependencies
+
+Logos uses SymPy to render logical formulas as LaTeX images. This requires an external LaTeX installation and image rendering tools.
+
+#### Ubuntu / Debian
 
 ```bash
-python logos.py
+sudo apt install texlive-latex-base dvipng
 ```
 
-Or launch the command-line interface:
+### 4. Run the web application
+
+Start the Flask development server:
+
+```bash
+./run.sh
+```
+
+The application will be available at:
+
+```text
+http://127.0.0.1:5000
+```
+
+### 5. Run the command-line interface
+
+To use the CLI version:
 
 ```bash
 python logos-cli.py
 ```
+
+---
+
+## Troubleshooting
+
+If `run.sh` reports missing dependencies, activate the virtual environment and reinstall the requirements:
+
+```bash
+source .venv/bin/activate
+pip install -r requirements.txt
+```
+
+If LaTeX rendering fails, verify that both LaTeX and `dvipng` are installed and available in your system `PATH`.
 
 ---
 
