@@ -50,6 +50,30 @@ In the web application, users can progressively construct a derivation by propos
 
 ---
 
+## Web Application Workflow
+
+The Flask application provides a step-by-step environment for constructing propositional logic derivations.
+
+1. **Define the argument**
+   - Specify the propositional variables.
+   - Define the initial number of premises.
+
+2. **Enter the premises**
+   - Provide the initial propositions using Logos functional notation.
+
+3. **Construct the derivation**
+   - Propose a new proposition.
+   - Reference previous premises or derived statements.
+   - Optionally describe the inference rule used.
+
+4. **Validate the inference**
+   - Logos checks whether the referenced statements logically imply the proposed proposition using truth-table evaluation.
+   - Valid propositions are added to the derivation chain and can be referenced in future steps.
+
+This approach allows users to build arguments incrementally while keeping the validation process independent from the interface.
+
+---
+
 ## Project Structure
 
 ```text
