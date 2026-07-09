@@ -169,6 +169,7 @@ Its main goals were:
 * Design and implement an inference engine from scratch.
 * Separate the core inference engine from the user interfaces.
 * Explore truth-table evaluation as a method for validating logical arguments.
+* Explore how logical derivations can be represented and validated programmatically.
 * Build both a command-line interface and a web application on top of the same engine.
 * Improve the learning experience by providing an interactive derivation workflow and mathematical rendering of logical formulas.
 
