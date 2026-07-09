@@ -52,17 +52,31 @@ In the web application, users can progressively construct a derivation by propos
 ## Project Structure
 
 ```text
+## Project Structure
+
+```text
 .
 ├── app/
-│   ├── logosengine.py      # Propositional logic inference engine
-│   ├── logos2latex.py      # LaTeX formula renderer
-│   ├── routes.py           # Flask routes
-│   ├── templates/
-│   └── static/
-├── forms.py                # WTForms definitions
-├── logos-cli.py            # Command-line interface
-├── logos.py                # Flask application entry point
-└── config.py
+│   ├── logosengine.py       # Propositional logic inference engine
+│   ├── logos2latex.py       # Logical formula to LaTeX translator
+│   ├── routes.py            # Flask application routes and views
+│   ├── static/              # Static assets and generated formula images
+│   └── templates/           # Jinja2 HTML templates
+│
+├── forms.py                 # WTForms definitions
+├── config.py                # Application configuration
+├── logos-cli.py             # Command-line interface
+├── logos.py                 # Flask application entry point
+│
+├── requirements.txt         # Python dependencies
+├── setup.sh                 # Virtual environment setup script
+├── run.sh                   # Web server execution script
+├── clearcache.sh            # Utility script for cleaning generated files
+│
+├── README.md
+└── LICENSE.txt
+```
+
 ```
 
 ---
