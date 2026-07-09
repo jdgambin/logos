@@ -1,13 +1,31 @@
 #!/bin/bash
-# Script para probar la aplicación web.
 
-if ! type -P flask &> /dev/null
+set -e
+
+if [ ! -d ".venv" ]; then
+    echo "Virtual environment not found."
+    echo "Create it with:"
+    echo "python3 -m venv .venv"
+    exit 1
+fi
+
+source .venv/bin/activate
+
+if ! python -c "import flask, flask_wtf, sympy" &> /dev/null
 then
-	printf "The Flask framework isn't installed.\n" >&2
-	printf "Install the following dependencies:\n" >&2
-	printf "> pip install flask flask-wtf python-dotenv\n" >&2
-	exit 1
+    echo "Python dependencies are missing."
+    echo "Install them with:"
+    echo "pip install -r requirements.txt"
+    exit 1
+fi
+
+if ! command -v latex &> /dev/null
+then
+    echo "LaTeX is not installed."
+    echo "Install a LaTeX distribution and dvipng."
+    exit 1
 fi
 
 export FLASK_APP=logos.py
+
 flask run --debug
