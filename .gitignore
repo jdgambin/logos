@@ -2,3 +2,4 @@ app/static/temprops/*.png
 !app/static/temprops/.gitkeep
 app/__pycache__
 __pycache__
+/.venv/
