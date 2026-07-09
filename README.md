@@ -1,6 +1,6 @@
 # Logos
 
-> An interactive propositional logic inference and derivation assistant written in Python.
+> An interactive propositional logic inference and derivation assistant built with Python.
 
 Logos is a personal software project for exploring propositional logic through interactive argument construction and truth-table validation.
 
