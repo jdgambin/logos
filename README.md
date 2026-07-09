@@ -52,9 +52,6 @@ In the web application, users can progressively construct a derivation by propos
 ## Project Structure
 
 ```text
-## Project Structure
-
-```text
 .
 ├── app/
 │   ├── logosengine.py       # Propositional logic inference engine
@@ -75,8 +72,6 @@ In the web application, users can progressively construct a derivation by propos
 │
 ├── README.md
 └── LICENSE.txt
-```
-
 ```
 
 ---
