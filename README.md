@@ -54,6 +54,7 @@ In the web application, users can progressively construct a derivation by propos
 ```text
 .
 ├── app/
+│   ├── __init__.py          # Flask application initialization
 │   ├── logosengine.py       # Propositional logic inference engine
 │   ├── logos2latex.py       # Logical formula to LaTeX translator
 │   ├── routes.py            # Flask application routes and views
