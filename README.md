@@ -9,7 +9,7 @@ At its core, Logos evaluates whether an argument is logically valid by exhaustiv
 The project provides two complementary interfaces:
 
 * **Command-Line Interface (CLI):** a lightweight interface for validating complete propositional logic arguments using only Python's standard library.
-* **Flask Web Application:** an interactive environment for constructing derivations step by step, validating each inference, and rendering formulas as LaTeX.
+* **Flask Web Application:** provides an interactive environment for constructing propositional logic derivations, validating each inference step, and extending the argument with verified propositions.
 
 To improve readability during the derivation process, the web application also renders logical formulas as LaTeX expressions.
 
