@@ -46,7 +46,7 @@ An argument is considered **logically valid** if the implication
 
 is true under every possible valuation.
 
-In the web application, users can progressively construct a derivation by proposing new inference steps. Each proposed step is verified by the inference engine before being incorporated into the argument.
+In the web application, users can progressively construct a derivation by proposing new inference steps. Each proposed step is verified by the inference engine before being incorporated into the argument. Each proposition can reference previous premises or derived statements, creating a growing chain of verified logical steps.
 
 ---
 
