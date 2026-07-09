@@ -119,7 +119,7 @@ Logos uses SymPy to render logical formulas as LaTeX images. This requires an ex
 #### Ubuntu / Debian
 
 ```bash
-sudo apt install texlive-latex-base dvipng
+sudo apt install texlive-latex-base texlive-latex-extra dvipng
 ```
 
 ### 4. Run the web application
